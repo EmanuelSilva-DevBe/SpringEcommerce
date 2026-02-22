@@ -16,31 +16,6 @@ import java.util.List;
 public class UserController {
     public static List<UserDTO> users = new ArrayList<UserDTO>();
 
-    //Controller Post que faz a incialização de três usuários.
-    @PostConstruct
-    public void IntiateList(){
-        UserDTO userDTO = new UserDTO();
-
-        userDTO.setNome("Emanuel");
-        userDTO.setCpf("08912546333");
-        userDTO.setTelefone("85998481269");
-        userDTO.setEmail("Emanuel43333@gmail.com");
-        userDTO.setEndereco("Rua doutor otávio lobo");
-        userDTO.setDataCadastro(LocalDateTime.now());
-
-        UserDTO userDTO2 = new UserDTO();
-
-        userDTO2.setNome("Kaylane Eduarda");
-        userDTO2.setCpf("123456789101");
-        userDTO2.setTelefone("85997601227");
-        userDTO2.setEmail("kaylane04@gmail.com");
-        userDTO2.setEndereco("Rua itapoã");
-        userDTO2.setDataCadastro(LocalDateTime.now());
-
-        users.add(userDTO);
-        users.add(userDTO2);
-    }
-
     @GetMapping
     public List<UserDTO> getUsers(){
         return users;
